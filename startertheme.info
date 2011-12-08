@@ -1,0 +1,23 @@
+name = THEMENAME
+description = Drupal 7 Starter Theme for use as a starting template for building custom themes. Uses HTML5 Boilerplate with Modernizr and Normalize.css.
+version = 1.0
+core = 7.x
+
+stylesheets[all][] = style.css
+
+scripts[] = js/libs/modernizr-2.0.6.min.js
+scripts[] = js/plugins.js
+scripts[] = js/script.js
+
+regions[header] = Header
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[highlighted] = Highlighted
+
+regions[featured] = Featured
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+
+regions[footer] = Footer
