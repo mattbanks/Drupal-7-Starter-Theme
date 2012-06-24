@@ -1,6 +1,6 @@
 <?php
 
-	// Add fucntions here
+	// Add functions here
 
 ?>
 

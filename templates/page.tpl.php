@@ -36,15 +36,15 @@
 			</div>
 
 			<?php if ($page['sidebar_first']): ?>
-				<div id="sidebar-first">
+				<aside id="sidebar-first">
 					<?php print render($page['sidebar_first']); ?>
-				</div>
+				</aside>
 			<?php endif; ?>
 
 			<?php if ($page['sidebar_second']): ?>
-				<div id="sidebar-second">
+				<aside id="sidebar-second">
 					<?php print render($page['sidebar_second']); ?>
-				</div>
+				</aside>
 			<?php endif; ?>
 
 		</section> <!-- /#main -->
