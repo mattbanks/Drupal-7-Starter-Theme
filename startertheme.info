@@ -5,9 +5,9 @@ core = 7.x
 
 stylesheets[all][] = style.css
 
-scripts[] = js/libs/modernizr-2.5.2.min.js
+scripts[] = js/vendor/modernizr-2.6.2.min.js
 scripts[] = js/plugins.min.js
-scripts[] = js/jquery.functions.min.js
+scripts[] = js/main.min.js
 
 regions[header] = Header
 regions[help] = Help
