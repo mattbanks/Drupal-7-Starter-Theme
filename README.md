@@ -1,6 +1,6 @@
 # Drupal 7 Starter Theme
 
-Version: 2.5
+Version: 2.5.1
 
 ## Contributors:
 
@@ -47,6 +47,10 @@ I use [CodeKit](http://incident57.com/codekit/) for Compass/SCSS compiling, but 
 * [XML Sitemap](http://drupal.org/project/xmlsitemap)
 
 ### Changelog
+
+#### Version 2.5.1
+
+* Add grid column sizes I typically use, general code cleanup
 
 #### Version 2.5
 
