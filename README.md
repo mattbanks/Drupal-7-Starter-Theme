@@ -93,7 +93,7 @@ The theme includes deployments via [grunt-rsync](https://github.com/jedrichards/
 
 ### Credits
 
-Without these projects, this WordPress Starter Theme wouldn't be where it is today.
+Without these projects, this Drupal Starter Theme wouldn't be where it is today.
 
 * [HTML5 Boilerplate](http://html5boilerplate.com)
 * [Normalize.css](http://necolas.github.com/normalize.css)
