@@ -1,37 +1,43 @@
 'use strict';
 module.exports = function(grunt) {
 
+    // load all grunt tasks
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
     grunt.initConfig({
 
-        // live reload, in case you want to change the port or anything
-        livereload: {
+        // watch for changes and trigger compass, jshint, uglify and livereload
+        watch: {
+            options: {
+                livereload: true,
+            },
+            compass: {
+                files: ['assets/scss/**/*.{scss,sass}'],
+                tasks: ['compass']
+            },
+            js: {
+                files: '<%= jshint.all %>',
+                tasks: ['jshint', 'uglify']
+            },
+            livereload: {
+                files: ['*.html', '*.php', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
+            }
+        },
+
+        // compass and scss
+        compass: {
+            dist: {
+                options: {
+                    config: 'config.rb',
+                    force: true
+                }
+            }
         },
 
         // javascript linting with jshint
         jshint: {
             options: {
-                "bitwise": true,
-                "eqeqeq": true,
-                "eqnull": true,
-                "immed": true,
-                "newcap": true,
-                "es5": true,
-                "esnext": true,
-                "camelcase": true,
-                "latedef": true,
-                "noarg": true,
-                "node": true,
-                "undef": true,
-                "browser": true,
-                "trailing": true,
-                "jquery": true,
-                "curly": true,
-                "supernew": true,
-                "globals": {
-                    "Backbone": true,
-                    "_": true,
-                    "jQuery": true
-                },
+                jshintrc: '.jshintrc',
                 "force": true
             },
             all: [
@@ -59,28 +65,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // compass and scss
-        compass: {
-            dist: {
-                options: {
-                    config: 'config.rb',
-                    force: true
-                }
-            }
-        },
-
-        // regarde to watch for changes and trigger compass, jshint, uglify and live reload
-        regarde: {
-            compass: {
-                files: 'assets/scss/**/*',
-                tasks: ['compass', 'livereload']
-            },
-            js: {
-                files: '<%= jshint.all %>',
-                tasks: ['jshint', 'uglify', 'livereload']
-            }
-        },
-
         // image optimization
         imagemin: {
             dist: {
@@ -98,14 +82,14 @@ module.exports = function(grunt) {
         },
 
         // deploy via rsync
-        rsync: {
+        deploy: {
             staging: {
                 src: "./",
                 dest: "~/path/to/theme",
                 host: "user@host.com",
                 recursive: true,
                 syncDest: true,
-                exclude: ['.git*', 'node_modules', '.sass-cache', 'Gruntfile.js', 'package.json', '.DS_Store', 'README.md', 'config.rb']
+                exclude: ['.git*', 'node_modules', '.sass-cache', 'Gruntfile.js', 'package.json', '.DS_Store', 'README.md', 'config.rb', '.jshintrc']
             },
             production: {
                 src: "./",
@@ -119,22 +103,10 @@ module.exports = function(grunt) {
 
     });
 
-    // load tasks
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-regarde');
-    grunt.loadNpmTasks('grunt-contrib-livereload');
-    grunt.loadNpmTasks('grunt-rsync');
+    // rename tasks
+    grunt.renameTask('rsync', 'deploy');
 
     // register task
-    grunt.registerTask('default', [
-        'livereload-start',
-        'jshint',
-        'compass',
-        'uglify',
-        'regarde'
-    ]);
+    grunt.registerTask('default', ['watch']);
 
 };
