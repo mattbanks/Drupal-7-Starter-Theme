@@ -1,6 +1,6 @@
 # Drupal 7 Starter Theme
 
-Version: 3.0
+Version: 3.1
 
 ## Contributors:
 
@@ -52,6 +52,12 @@ The theme includes deployments via [grunt-rsync](https://github.com/jedrichards/
 * [XML Sitemap](http://drupal.org/project/xmlsitemap)
 
 ### Changelog
+
+#### Version 3.2
+
+* tweak Gruntfile.js to fix LiveReload issues and generate source maps for both main.js and plugins.js
+* update to normalize v2.1.2
+* optimizations and tweaks here and there
 
 #### Version 3.0
 
