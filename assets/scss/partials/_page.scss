@@ -1,11 +1,23 @@
 /* GENERAL */
-body {
-	background: white;
-	font: $baseFont;
+body { }
+
+a,
+a:visited {
+	color: $linkColor;
+}
+a:hover {
+	color: $linkHoverColor;
 }
 
-a, a:visited { color: $linkColor; }
-a:hover { color: $linkHoverColor; }
+::-moz-selection {
+    background: $selectionColor;
+    text-shadow: none;
+}
+
+::selection {
+    background: $selectionColor;
+    text-shadow: none;
+}
 
 /* HEADINGS / TYPOGRAPHY */
 h1,
@@ -18,11 +30,11 @@ h4 {
 h1 { }
 h2 { }
 h3 { }
-h4.widgettitle { }
+h4 { }
 
 /* STRUCTURE */
 #container {
-	width: $pageWidth;
+	max-width: $pageWidth;
 	margin: 20px auto;
 }
 
