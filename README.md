@@ -1,6 +1,6 @@
 # Drupal 7 Starter Theme
 
-Version: 3.1
+Version: 3.2.0
 
 ## Contributors:
 
@@ -53,7 +53,12 @@ The theme includes deployments via [grunt-rsync](https://github.com/jedrichards/
 
 ### Changelog
 
-#### Version 3.2
+#### Version 3.2.0
+
+* update grunt dependencies
+* update spacing in functions
+
+#### Version 3.1
 
 * tweak Gruntfile.js to fix LiveReload issues and generate source maps for both main.js and plugins.js
 * update to normalize v2.1.2
